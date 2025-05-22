@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Bill Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            /* Styling for document.write content */
+            color: #222;
+            font-size: 1.1rem;
+        }
+
+        .main-container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        fieldset {
+            border: 2px solid #4CAF50;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        legend {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- main container -->
+    <div class="main-container">
+        <fieldset>
+            <legend>Shopping Bill Calculator</legend>
+
+            <!-- using script tag for javascript -->
+            <script>
+
+                // initailize  all the variables
+                const priceLaptop = 50000;
+                const priceSmartphone = 20000;
+                const priceHeadphone = 2000;
+
+                let discount = 0;
+
+                // take the input from user using prompt function 
+                // using the parseInt function for string coversion into integer (decimal number)
+                let quantityLaptop = parseInt(prompt("Enter the quantity of Laptop : "), 10);
+                let quantitySmartphone = parseInt(prompt("Ente the quantity of Smartphone"), 10);
+                let quantityHeadphone = parseInt(prompt("Enter the quantity of HeadPhone"), 10);
+
+                // handle the invalid Input which give user if use give the string or empty feild it will become NaN
+                quantityLaptop = isNaN(quantityLaptop) ? 0 : quantityLaptop;
+                quantitySmartphone = isNaN(quantitySmartphone) ? 0 : quantitySmartphone;
+                quantityHeadphone = isNaN(quantityHeadphone) ? 0 : quantityHeadphone;
+
+                // calculate the total bill 
+                let totalBill = (quantityLaptop * priceLaptop) + (quantitySmartphone * priceSmartphone) + (quantityHeadphone * priceHeadphone);
+
+                // now give the discount to customer and check the condition to fullfil discount offer
+
+                if (totalBill > 5000) {
+
+                    discount = totalBill * 0.20;
+                }
+                else if (totalBill > 3000 && totalBill <= 5000) {
+                    discount = totalBill * 0.15;
+                }
+                else if (totalBill > 1000 && totalBill <= 3000) {
+                    discount = totalBill * 0.10;
+                }
+
+
+
+                // calculate the final Amount with discount
+                const finalAmount = totalBill - discount;
+
+                // show the result on the browser (screen) using document.write function
+                // document.write("<h2>Shoppint Bill</h2>");
+                // document.write("Total Bill: Rs " + totalBill.toFixed(2) + "</br>");
+                // document.write("Discount: Rs " + discount.toFixed(2) + "</br>");
+                // document.write("Amount to Pay: Rs " + finalAmount + "</br>")
+
+
+                document.write("<h2>Shopping Bill</h2>");
+                document.write("Total Bill: Rs " + totalBill.toFixed(2) + "<br>");
+                document.write("Discount: Rs " + discount.toFixed(2) + "<br>");
+                document.write("Amount to Pay: Rs " + finalAmount.toFixed(2));
+
+
+                alert("Thank You For Shopping !🎁 Your Bill is Ready.")
+
+            </script>
+        </fieldset>
+    </div>
+</body>
+
+</html>
