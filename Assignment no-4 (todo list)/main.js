@@ -4,26 +4,28 @@ let addLst = document.getElementById('items_lst');
 
 
 btnClick.addEventListener('click', function () {
-   const newItemText = inputValue.value.trim();
+   let newItemText = inputValue.value.trim();
     if ( newItemText == "") {
         alert("NO item is enter");
     }
     else {
        
-        // let items = addLst.querySelector('ul span :first-child');
-        // let exits = false;
-        // items.forEach((item)=>{
-        //     if(item.textContent.toLowerCase() ===  inputValue.value.toLowerCase())
-        //     {
-        //        exits = true;
-        //     }
-        // })
+        let items = addLst.querySelectorAll('ul span:first-child');
+        let exists = false;
+        items.forEach((item)=>{
+            console.log(item)
+            if(item.innerText.toLowerCase() ===   newItemText.toLowerCase())
+            {
+               exists = true;
+               console.log(exists)
+            }
+        })
 
-        // if(exits)
-        // {
-        //   alert('item already exist')
-        //   return;
-        // }
+        if(exists)
+        {
+          alert('item already exist')
+          return;
+        }
 
 
         let ulCreate = document.createElement('ul');
@@ -66,7 +68,7 @@ btnClick.addEventListener('click', function () {
 
 
 
-        inputValue.value = " ";
+         newItemText = " ";
 
 
 
