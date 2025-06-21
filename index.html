@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My JavaScript Assignments</title>
     <style>
         :root {
-            --primary: #6C63FF;  /* Vibrant purple */
-            --secondary: #FF6584; /* Pink */
-            --accent: #00BFA6;   /* Teal */
+            --primary: #6C63FF;
+            /* Vibrant purple */
+            --secondary: #FF6584;
+            /* Pink */
+            --accent: #00BFA6;
+            /* Teal */
             --dark: #2D3748;
             --light: #F7FAFC;
             --gradient: linear-gradient(45deg, #6C63FF, #FF6584);
         }
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #F8F9FA;
@@ -22,13 +26,13 @@
             color: var(--dark);
             line-height: 1.6;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
+
         header {
             background: var(--gradient);
             color: white;
@@ -37,64 +41,64 @@
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
             margin-bottom: 2rem;
         }
-        
+
         h1 {
             margin: 0;
             font-size: 3rem;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+
         .subtitle {
             font-size: 1.3rem;
             opacity: 0.9;
             margin-top: 0.5rem;
         }
-        
+
         .assignments-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 2rem;
         }
-        
+
         .assignment-card {
             background: white;
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(108, 99, 255, 0.1);
             overflow: hidden;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
-        
+
         .assignment-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(108, 99, 255, 0.2);
         }
-        
+
         .assignment-header {
             background: var(--gradient);
             color: white;
             padding: 15px;
             text-align: center;
         }
-        
+
         .assignment-body {
             padding: 25px;
         }
-        
+
         .assignment-title {
             margin: 0;
             font-size: 1.4rem;
             font-weight: 600;
         }
-        
+
         .assignment-desc {
             color: #718096;
             margin: 15px 0;
             min-height: 60px;
         }
-        
+
         .btn {
             display: inline-block;
             background: var(--accent);
@@ -114,13 +118,13 @@
             font-size: 0.9rem;
             box-shadow: 0 4px 6px rgba(0, 191, 166, 0.2);
         }
-        
+
         .btn:hover {
             background: #00A991;
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0, 191, 166, 0.3);
         }
-        
+
         footer {
             text-align: center;
             margin-top: 4rem;
@@ -129,19 +133,19 @@
             font-size: 0.9rem;
             background: white;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .emoji {
             font-size: 1.2rem;
             margin: 0 3px;
         }
-        
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.2rem;
             }
-            
+
             .assignments-container {
                 grid-template-columns: 1fr;
             }
@@ -149,6 +153,7 @@
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -156,7 +161,7 @@
             <p class="subtitle">A colorful showcase of my programming assignments</p>
         </div>
     </header>
-    
+
     <div class="container">
         <div class="assignments-container">
             <!-- Assignment 1 -->
@@ -165,11 +170,13 @@
                     <h3 class="assignment-title">Assignment 1</h3>
                 </div>
                 <div class="assignment-body">
-                    <p class="assignment-desc">Basic JavaScript concepts including variables, data types, and operators.</p>
-                    <a href="Assignment no-1 (Shopping bill calculator)/index.html" target="_blank" class="btn">Explore <span class="emoji">🚀</span></a>
+                    <p class="assignment-desc">Basic JavaScript concepts including variables, data types, and operators.
+                    </p>
+                    <a href="Assignment no-1 (Shopping bill calculator)/index.html" target="_blank" class="btn">Explore
+                        <span class="emoji">🚀</span></a>
                 </div>
             </div>
-            
+
             <!-- Assignment 2 -->
             <div class="assignment-card">
                 <div class="assignment-header">
@@ -180,7 +187,7 @@
                     <a href="assignment2/index.html" class="btn">Explore <span class="emoji">✨</span></a>
                 </div>
             </div>
-            
+
             <!-- Assignment 3 -->
 
             <!-- <div class="assignment-card">
@@ -198,15 +205,17 @@
                     <h3 class="assignment-title">Assignment 3</h3>
                 </div>
                 <div class="assignment-body">
-                    <p class="assignment-desc">Loops -  Arrays, Functions, and User Input with prompt() ,parseFloat, console.log.</p>
-                    <a href="./Assignment no-3 (Daily Expense Tracker)/index.html" class="btn">Explore <span class="emoji">🎮</span></a>
+                    <p class="assignment-desc">Loops - Arrays, Functions, and User Input with prompt() ,parseFloat,
+                        console.log.</p>
+                    <a href="./Assignment no-3 (Daily Expense Tracker)/index.html" class="btn">Explore <span
+                            class="emoji">🎮</span></a>
                 </div>
             </div>
-            
 
-            
+
+
             <!-- Assignment 4 -->
-            <div class="assignment-card">
+            <!-- <div class="assignment-card">
                 <div class="assignment-header">
                     <h3 class="assignment-title">Assignment 4</h3>
                 </div>
@@ -214,8 +223,22 @@
                     <p class="assignment-desc">Working with arrays - sorting, filtering and complex operations.</p>
                     <a href="assignment4/index.html" class="btn">Explore <span class="emoji">🧮</span></a>
                 </div>
+            </div> -->
+
+
+
+
+
+            <div class="assignment-card">
+                <div class="assignment-header">
+                    <h3 class="assignment-title">Assignment 4</h3>
+                </div>
+                <div class="assignment-body">
+                    <p class="assignment-desc">Todo using DOM Manipulation</p>
+                    <a href="Assignment no-4 (todo list)/index.html" class="btn">Explore <span class="emoji">🧮</span></a>
+                </div>
             </div>
-            
+
             <!-- Assignment 5 -->
             <div class="assignment-card">
                 <div class="assignment-header">
@@ -226,7 +249,7 @@
                     <a href="assignment5/index.html" class="btn">Explore <span class="emoji">🌐</span></a>
                 </div>
             </div>
-            
+
             <!-- Assignment 6 -->
             <div class="assignment-card">
                 <div class="assignment-header">
@@ -239,7 +262,7 @@
             </div>
         </div>
     </div>
-    
+
     <footer>
         <div class="container">
             <p>Created with <span class="emoji">❤️</span> by Mubashir (WMA-388728) | Hosted on GitHub Pages</p>
@@ -247,4 +270,5 @@
         </div>
     </footer>
 </body>
+
 </html>
