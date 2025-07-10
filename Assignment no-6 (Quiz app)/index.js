@@ -119,7 +119,7 @@ submitBtn.addEventListener('click', () => {
 
     if (selectedOptionIndex === quizData[currentQuizz].correct) {
         score += 1;
-        console.log(score += 1);
+       
     }
     currentQuizz++;
 
