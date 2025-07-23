@@ -1,6 +1,6 @@
 
 
-async function fetchProduct() {
+(async function() {
 
     try {
 
@@ -19,7 +19,7 @@ async function fetchProduct() {
         console.log(" Error fetching data  : ", error);
     }
 
-}
+})();
 
 
 
@@ -75,11 +75,6 @@ function renderCards(products) {
 }
 
 
-
-
-
-
-fetchProduct()
 
 
 
