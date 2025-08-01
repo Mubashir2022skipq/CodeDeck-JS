@@ -1,0 +1,20 @@
+/* Layout Styles with CSS Grid */
+
+/* Main layout grid */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 100%;
+  padding: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+/* Feed section - main content */
+.feed {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Media queries for responsive layout are in responsive.css */

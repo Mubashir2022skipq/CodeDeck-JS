@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Clone</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="facebook-app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header__left">
+        <div class="header__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="currentColor" height="40" width="40">
+            <path d="M36 18c0-9.941-8.059-18-18-18S0 8.059 0 18c0 8.983 6.582 16.445 15.207 17.801V23.203h-4.578V18h4.578v-3.979c0-4.52 2.688-7.019 6.811-7.019 1.969 0 4.031.352 4.031.352v4.434h-2.266c-2.242 0-2.941 1.391-2.941 2.816V18h5.004l-.801 5.203h-4.203v12.598C29.418 34.445 36 26.983 36 18z"></path>
+          </svg>
+        </div>
+        <div class="header__search">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" placeholder="Search Facebook">
+        </div>
+      </div>
+      <nav class="header__nav">
+        <a href="#" class="header__nav-item active">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+        </a>
+        <a href="#" class="header__nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </a>
+        <a href="#" class="header__nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+            <polyline points="17 2 12 7 7 2"></polyline>
+          </svg>
+        </a>
+        <a href="#" class="header__nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </a>
+        <a href="#" class="header__nav-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </a>
+      </nav>
+      <div class="header__right">
+        <a href="#" class="header__profile">
+          <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Profile">
+        </a>
+        <a href="#" class="header__settings">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Left Sidebar -->
+      <aside class="sidebar sidebar--left">
+        <nav class="sidebar__nav">
+          <a href="#" class="sidebar__nav-item active">
+            <span class="sidebar__icon">🏠</span>
+            <span class="sidebar__text">Home</span>
+          </a>
+          <a href="#" class="sidebar__nav-item">
+            <span class="sidebar__icon">👨‍👩‍👧‍👦</span>
+            <span class="sidebar__text">Not-So-Secret Family Recipes</span>
+          </a>
+          <a href="#" class="sidebar__nav-item">
+            <span class="sidebar__icon">🍽️</span>
+            <span class="sidebar__text">Red Table Talk Group</span>
+          </a>
+          <a href="#" class="sidebar__nav-item">
+            <span class="sidebar__icon">🎭</span>
+            <span class="sidebar__text">Events</span>
+          </a>
+          <a href="#" class="sidebar__nav-item">
+            <span class="sidebar__icon">🔖</span>
+            <span class="sidebar__text">Saved</span>
+          </a>
+          <a href="#" class="sidebar__nav-item">
+            <span class="sidebar__icon">🎮</span>
+            <span class="sidebar__text">Gaming</span>
+          </a>
+          <a href="#" class="sidebar__nav-item">
+            <span class="sidebar__icon">💰</span>
+            <span class="sidebar__text">Fundraisers</span>
+          </a>
+          <a href="#" class="sidebar__nav-item">
+            <span class="sidebar__icon">📸</span>
+            <span class="sidebar__text">Memories</span>
+          </a>
+          <a href="#" class="sidebar__nav-item">
+            <span class="sidebar__icon">❓</span>
+            <span class="sidebar__text">Help & Support</span>
+          </a>
+          <a href="#" class="sidebar__nav-item">
+            <span class="sidebar__icon">⚙️</span>
+            <span class="sidebar__text">Settings & Privacy</span>
+          </a>
+          <a href="#" class="sidebar__nav-item">
+            <span class="sidebar__icon">••</span>
+            <span class="sidebar__text">See More</span>
+          </a>
+        </nav>
+        <div class="sidebar__footer">
+          <small>Privacy · Terms · Advertising · Ad Choices · Cookies · More · Facebook © 2025</small>
+        </div>
+      </aside>
+
+      <!-- Feed -->
+      <section class="feed">
+        <!-- Stories -->
+        <div class="stories">
+          <h3 class="stories__title">Stories</h3>
+          <div class="stories__container">
+            <div class="story story--create">
+              <div class="story__avatar">
+                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Your Story">
+                <div class="story__add">+</div>
+              </div>
+              <p class="story__text">Add to Story</p>
+            </div>
+            <div class="story">
+              <div class="story__avatar">
+                <img src="https://i.pravatar.cc/150?img=32" alt="Tom Russo">
+              </div>
+              <div class="story__preview" style="background-image: url('https://images.pexels.com/photos/3935702/pexels-photo-3935702.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
+                <p class="story__name">Aaliyah</p>
+              </div>
+            </div>
+            <div class="story">
+              <div class="story__avatar">
+                <img src="https://i.pravatar.cc/150?img=44" alt="Anna Backland">
+              </div>
+              <div class="story__preview" style="background-image: url('https://images.pexels.com/photos/1122868/pexels-photo-1122868.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
+                <p class="story__name">Saba</p>
+              </div>
+            </div>
+            <div class="story">
+              <div class="story__avatar">
+                <img src="https://i.pravatar.cc/150?img=67" alt="Dennis Han">
+              </div>
+              <div class="story__preview" style="background-image: url('https://images.pexels.com/photos/2253275/pexels-photo-2253277.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
+                <p class="story__name">Hamza</p>
+              </div>
+            </div>
+            <div class="story">
+              <div class="story__avatar">
+                <img src="https://i.pravatar.cc/150?img=25" alt="Cynthia Lopez">
+              </div>
+              <div class="story__preview" style="background-image: url('https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')">
+                <p class="story__name">Maryam</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Create Post -->
+        <div class="create-post">
+          <div class="create-post__top">
+            <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Your Profile" class="create-post__avatar">
+            <div class="create-post__input">
+              <input type="text" placeholder="Add a post...">
+            </div>
+          </div>
+          <div class="create-post__bottom">
+            <button class="create-post__action">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+              <span>Photo</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Posts -->
+        <div class="posts">
+          <article class="post">
+            <div class="post__header">
+              <div class="post__avatar">
+                <img src="https://i.pravatar.cc/150?img=32" alt="Tom Russo">
+              </div>
+              <div class="post__info">
+                <h4 class="post__author">Aaliyah</h4>
+                <p class="post__time">2 hrs ago</p>
+              </div>
+              <button class="post__more">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="1"></circle>
+                  <circle cx="19" cy="12" r="1"></circle>
+                  <circle cx="5" cy="12" r="1"></circle>
+                </svg>
+              </button>
+            </div>
+            <div class="post__content">
+              <p class="post__text">Not having fun at all 😂</p>
+              <div class="post__image">
+                <img src="https://images.pexels.com/photos/1671325/pexels-photo-1671325.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Post Image">
+              </div>
+            </div>
+            <div class="post__actions">
+              <button class="post__action">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                </svg>
+                <span>Like</span>
+              </button>
+              <button class="post__action">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                <span>Comment</span>
+              </button>
+              <button class="post__action">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="18" cy="5" r="3"></circle>
+                  <circle cx="6" cy="12" r="3"></circle>
+                  <circle cx="18" cy="19" r="3"></circle>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                </svg>
+                <span>Share</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Right Sidebar -->
+      <aside class="sidebar sidebar--right">
+        <!-- Groups -->
+        <section class="widget">
+          <div class="widget__header">
+            <h3 class="widget__title">Groups</h3>
+            <span class="widget__subtitle">New ways to find and join conversations.</span>
+            <button class="widget__button">Find Your Groups</button>
+          </div>
+          <div class="widget__content">
+            <div class="widget__item">
+              <div class="widget__avatar-group">
+                <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Avatar" class="widget__avatar">
+                <img src="https://i.pravatar.cc/150?img=32" alt="Avatar" class="widget__avatar">
+                <img src="https://i.pravatar.cc/150?img=44" alt="Avatar" class="widget__avatar">
+              </div>
+              <p class="widget__text">Saba and 9 friends joined Groups</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contacts -->
+        <section class="widget">
+          <div class="widget__header">
+            <h3 class="widget__title">Contacts</h3>
+            <div class="widget__actions">
+              <button class="widget__action">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="1"></circle>
+                  <circle cx="19" cy="12" r="1"></circle>
+                  <circle cx="5" cy="12" r="1"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="widget__content">
+            <div class="widget__contact">
+              <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Dennis Han" class="widget__contact-avatar">
+              <span class="widget__contact-name">Zayd</span>
+            </div>
+            <div class="widget__contact">
+              <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Eric Jones" class="widget__contact-avatar">
+              <span class="widget__contact-name">Hamza</span>
+            </div>
+            <div class="widget__contact">
+              <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Cynthia Lopez" class="widget__contact-avatar">
+              <span class="widget__contact-name">Aaliyah</span>
+            </div>
+            <div class="widget__contact">
+              <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Anna Backland" class="widget__contact-avatar">
+              <span class="widget__contact-name">Zainab</span>
+            </div>
+            <div class="widget__contact">
+              <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Adam Brown" class="widget__contact-avatar">
+              <span class="widget__contact-name">Ibrahim</span>
+            </div>
+            <div class="widget__contact">
+              <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Betty Chen" class="widget__contact-avatar">
+              <span class="widget__contact-name">Maryam</span>
+            </div>
+            <div class="widget__contact">
+              <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Dan Brown" class="widget__contact-avatar">
+              <span class="widget__contact-name">Ibrahim</span>
+            </div>
+            <div class="widget__contact">
+              <img src="https://api.dicebear.com/7.x/notionists/svg?seed=John?size=64" alt="Henri Cook" class="widget__contact-avatar">
+              <span class="widget__contact-name"> Saba</span>
+            </div>
+          </div>
+        </section>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>
