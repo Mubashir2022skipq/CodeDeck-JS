@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Friend Requests</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #1c1e21;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 360px;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            background-color: white;
+        }
+
+        .logo {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .menu-item:hover {
+            background-color: #f0f2f5;
+        }
+
+        .menu-item img {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+        }
+
+        .menu-item.active {
+            background-color: #e7f3ff;
+            font-weight: bold;
+        }
+
+        .menu-item.active .menu-text {
+            color: #1877f2;
+        }
+
+        .divider {
+            border-bottom: 1px solid #ddd;
+            margin: 15px 0;
+        }
+
+        .shortcuts-title {
+            color: #65676b;
+            font-size: 17px;
+            font-weight: bold;
+            margin: 20px 0 10px;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            margin-left: 360px;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #65676b;
+        }
+
+        .tab.active {
+            color: #1877f2;
+            border-bottom: 3px solid #1877f2;
+        }
+
+        .friend-requests-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .friend-request {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .friend-request:last-child {
+            border-bottom: none;
+        }
+
+        .friend-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .friend-info {
+            flex: 1;
+        }
+
+        .friend-name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .mutual-friends {
+            color: #65676b;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .request-time {
+            color: #65676b;
+            font-size: 13px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .confirm-btn,
+        .delete-btn {
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+
+        .confirm-btn {
+            background-color: #1877f2;
+            color: white;
+        }
+
+        .confirm-btn:hover {
+            background-color: #166fe5;
+        }
+
+        .delete-btn {
+            background-color: #e4e6eb;
+            color: #1c1e21;
+        }
+
+        .delete-btn:hover {
+            background-color: #d8dadf;
+        }
+
+        .header_logo {
+            color: #1877F2;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .sidebar {
+                width: 300px;
+            }
+
+            .main-content {
+                margin-left: 300px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .friend-request {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .friend-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .action-buttons {
+                margin-top: 15px;
+                justify-content: center;
+            }
+
+            .tabs {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <svg class="header_logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="currentColor"
+                height="40" width="40" id="back_previous_page">
+                <path
+                    d="M36 18c0-9.941-8.059-18-18-18S0 8.059 0 18c0 8.983 6.582 16.445 15.207 17.801V23.203h-4.578V18h4.578v-3.979c0-4.52 2.688-7.019 6.811-7.019 1.969 0 4.031.352 4.031.352v4.434h-2.266c-2.242 0-2.941 1.391-2.941 2.816V18h5.004l-.801 5.203h-4.203v12.598C29.418 34.445 36 26.983 36 18z">
+                </path>
+            </svg>
+
+            <div class="menu-item">
+                <!-- <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yZ/r/i7hepQ2OeZg.png" alt="Home"> -->
+
+                <span class="menu-text" id="go_home">Home</span>
+            </div>
+
+            <div class="menu-item">
+                <!-- <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/-XF4FQcre_i.png" alt="Friends"> -->
+                <span class="menu-text">Friends</span>
+            </div>
+
+            <div class="menu-item active">
+                <!-- <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/lVijPkTeN-r.png" alt="Friend Requests"> -->
+                <span class="menu-text">Friend Requests</span>
+            </div>
+
+            <div class="menu-item">
+                <!-- <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yG/r/A1HlI2LVo58.png" alt="Groups"> -->
+                <span class="menu-text">Groups</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="shortcuts-title">Your Shortcuts</div>
+
+            <div class="menu-item">
+                <!-- <img src="https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/8wTx0Eu2vRq.png" alt="Memories"> -->
+                <span class="menu-text">Memories</span>
+            </div>
+
+            <div class="menu-item">
+                <!-- <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/VPndBfB4Zb0.png" alt="Saved"> -->
+                <span class="menu-text">Saved</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Friends</h1>
+            </div>
+
+            <div class="tabs">
+                <div class="tab">Suggestions</div>
+                <div class="tab active">Friend Requests</div>
+                <div class="tab">All Friends</div>
+            </div>
+
+            <div class="friend-requests-container" id="friend_container">
+                <div class="section-title">Friend Requests</div>
+
+               
+
+                <!-- Friend Request 1 -->
+                <!-- <div class="friend-request">
+                    <img class="friend-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Friend">
+                    <div class="friend-info">
+                        <div class="friend-name">Sarah Johnson</div>
+                        <div class="mutual-friends">5 mutual friends</div>
+                        <div class="request-time">2 days ago</div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="confirm-btn">Confirm</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div> -->
+
+                <!-- Friend Request 2 -->
+                <!-- <div class="friend-request">
+                    <img class="friend-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Friend">
+                    <div class="friend-info">
+                        <div class="friend-name">Michael Brown</div>
+                        <div class="mutual-friends">12 mutual friends</div>
+                        <div class="request-time">1 week ago</div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="confirm-btn">Confirm</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div> -->
+
+                <!-- Friend Request 3 -->
+                <!-- <div class="friend-request">
+                    <img class="friend-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Friend">
+                    <div class="friend-info">
+                        <div class="friend-name">Emily Wilson</div>
+                        <div class="mutual-friends">3 mutual friends</div>
+                        <div class="request-time">3 days ago</div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="confirm-btn">Confirm</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div> -->
+
+                <!-- Friend Request 4 -->
+                <!-- <div class="friend-request">
+                    <img class="friend-avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Friend">
+                    <div class="friend-info">
+                        <div class="friend-name">David Miller</div>
+                        <div class="mutual-friends">8 mutual friends</div>
+                        <div class="request-time">5 days ago</div>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="confirm-btn">Confirm</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+   
+  
+   
+</body>
+
+</html>

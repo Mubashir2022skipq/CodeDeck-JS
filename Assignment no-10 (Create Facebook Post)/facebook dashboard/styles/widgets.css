@@ -1,0 +1,129 @@
+/* Widgets Styles */
+.widget {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.widget__header {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  position: relative;
+}
+
+.widget__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.widget__subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.widget__actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.widget__action {
+  color: var(--text-secondary);
+  padding: var(--spacing-xs);
+}
+
+.widget__action svg {
+  width: 20px;
+  height: 20px;
+}
+
+.widget__button {
+  background-color: var(--hover-bg);
+  color: var(--text-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: var(--spacing-sm);
+  width: fit-content;
+  transition: background-color var(--transition-fast);
+}
+
+.widget__button:hover {
+  background-color: var(--divider-color);
+}
+
+/* Widget Content */
+.widget__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Group Item */
+.widget__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+}
+
+.widget__avatar-group {
+  display: flex;
+  align-items: center;
+  
+}
+
+.widget__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-round);
+/* border: 2px solid var(--card-bg); */
+  
+  margin-right: -10px;
+  border: 2px solid rgb(150, 147, 147);
+  background: #2193b0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.widget__text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Contacts */
+.widget__contact {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-sm);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.widget__contact:hover {
+  background-color: var(--hover-bg);
+}
+
+.widget__contact-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-round);
+  margin-right: var(--spacing-md);
+   border: 1px solid rgb(150, 147, 147);
+   background: #59C173;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.widget__contact-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
