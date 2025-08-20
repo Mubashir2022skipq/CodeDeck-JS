@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell on OLX </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="../assets/css/sell.css">
+</head>
+<body>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="sell-form-container">
+                    <!-- Form Header -->
+                    <div class="sell-header text-center">
+                        <h2><i class="fas fa-tag me-2"></i>Sell Your Item</h2>
+                        <p class="mb-0">Fill in the details below to post your ad</p>
+                    </div>
+                    
+                    <!-- Step Indicator -->
+                    <div class="p-4">
+                        <div class="step-indicator">
+                            <div class="step active">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Item Details</div>
+                                <div class="step-connector"></div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Set Price</div>
+                                <div class="step-connector"></div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Contact Info</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="progress mb-4">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        
+                        <!-- Sell Form -->
+                        <form id="sellForm">
+                            <!-- Step 1: Item Details -->
+                            <div class="step-content" id="step1">
+                                <h4 class="mb-4"><i class="fas fa-info-circle text-primary me-2"></i>Item Details</h4>
+                                
+                                <!-- Category Selection -->
+                                <div class="mb-4">
+                                    <label for="category" class="form-label fw-bold">Category*</label>
+                                    <select class="form-select" id="category" required>
+                                        <option value="" selected disabled>Select a category</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="vehicles">Vehicles</option>
+                                        <option value="property">Property</option>
+                                        <option value="furniture">Furniture</option>
+                                        <option value="fashion">Fashion</option>
+                                        <option value="books">Books & Hobbies</option>
+                                        <option value="services">Services</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Subcategory Selection -->
+                                <div class="mb-4">
+                                    <label for="subcategory" class="form-label fw-bold">Subcategory*</label>
+                                    <select class="form-select" id="subcategory" required disabled>
+                                        <option value="" selected disabled>Select subcategory</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Item Title -->
+                                <div class="mb-4">
+                                    <label for="title" class="form-label fw-bold">Ad Title*</label>
+                                    <input type="text" class="form-control" id="title" placeholder="e.g. iPhone 12 Pro 128GB - Like New" required>
+                                    <div class="form-text">Make it short and descriptive</div>
+                                </div>
+                                
+                                <!-- Description -->
+                                <div class="mb-4">
+                                    <label for="description" class="form-label fw-bold">Description*</label>
+                                    <textarea class="form-control" id="description" rows="5" placeholder="Include details about features, condition, reason for selling, etc." required></textarea>
+                                    <div class="form-text">Minimum 30 characters</div>
+                                </div>
+                                
+                                <!-- Images Upload -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Upload Images*</label>
+                                    <p class="text-muted">First image will be your cover image (max 20 images)</p>
+                                    
+                                    <div class="image-upload-box mb-3" id="imageUploadBox">
+                                        <div class="upload-icon">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                        </div>
+                                        <h5>Click to upload images</h5>
+                                        <p class="text-muted">or drag and drop</p>
+                                        <p class="text-muted small">JPEG, PNG (Max 5MB each)</p>
+                                    </div>
+                                    <input type="file" id="imageUpload" multiple accept="image/*" style="display: none;">
+                                    
+                                    <!-- Image Previews -->
+                                    <div class="d-flex flex-wrap" id="imagePreviews"></div>
+                                </div>
+                                
+                                <!-- Condition -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Condition*</label>
+                                    <div class="d-flex flex-wrap">
+                                        <div class="form-check me-4">
+                                            <input class="form-check-input" type="radio" name="condition" id="new" value="new" required>
+                                            <label class="form-check-label" for="new">New</label>
+                                        </div>
+                                        <div class="form-check me-4">
+                                            <input class="form-check-input" type="radio" name="condition" id="used" value="used">
+                                            <label class="form-check-label" for="used">Used</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="condition" id="refurbished" value="refurbished">
+                                            <label class="form-check-label" for="refurbished">Refurbished</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Brand (for electronics) -->
+                                <div class="mb-4" id="brandField" style="display: none;">
+                                    <label for="brand" class="form-label fw-bold">Brand</label>
+                                    <input type="text" class="form-control" id="brand" placeholder="e.g. Apple, Samsung, etc.">
+                                </div>
+                                
+                                <!-- Next Button -->
+                                <div class="d-flex justify-content-end mt-4">
+                                    <button type="button" class="btn btn-sell text-white" id="nextStep1">Next: Set Price <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2: Set Price -->
+                            <div class="step-content" id="step2" style="display: none;">
+                                <h4 class="mb-4"><i class="fas fa-tag text-primary me-2"></i>Set Price</h4>
+                                
+                                <!-- Price -->
+                                <div class="mb-4">
+                                    <label for="price" class="form-label fw-bold">Price*</label>
+                                    <div class="input-group price-input">
+                                        <span class="input-group-text">Rs</span>
+                                        <input type="number" class="form-control" id="price" placeholder="Enter price" required>
+                                    </div>
+                                </div>
+                                
+                                <!-- Negotiable -->
+                                <div class="mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="negotiable">
+                                        <label class="form-check-label" for="negotiable">Negotiable</label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Navigation Buttons -->
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-outline-secondary" id="prevStep2"><i class="fas fa-arrow-left me-2"></i>Back</button>
+                                    <button type="button" class="btn btn-sell text-white" id="nextStep2">Next: Contact Info <i class="fas fa-arrow-right ms-2"></i></button>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 3: Contact Info -->
+                            <div class="step-content" id="step3" style="display: none;">
+                                <h4 class="mb-4"><i class="fas fa-user text-primary me-2"></i>Contact Information</h4>
+                                
+                                <!-- Location -->
+                                <div class="mb-4">
+                                    <label for="location" class="form-label fw-bold">Location*</label>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <select class="form-select" id="state" required>
+                                                <option value="" selected disabled>Select State</option>
+                                                <option value="karachi">Karachi</option>
+                                                <option value="punjab">Punjab</option>
+                                                <option value=" khyberpakhtunkhwa"> Khyberpakhtunkhwa</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <select class="form-select" id="city" required disabled>
+                                                <option value="" selected disabled>Select City</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="area" placeholder="Area/Locality" required>
+                                    </div>
+                                </div>
+                                
+                                <!-- Contact Details -->
+                                <div class="mb-4">
+                                    <label for="name" class="form-label fw-bold">Your Name*</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="phone" class="form-label fw-bold">Phone Number*</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                    <div class="form-text">Buyers will contact you on this number</div>
+                                </div>
+                                
+                                <!-- Email (optional) -->
+                                <div class="mb-4">
+                                    <label for="email" class="form-label fw-bold">Email (optional)</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                                
+                                <!-- Navigation Buttons -->
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button type="button" class="btn btn-outline-secondary" id="prevStep3"><i class="fas fa-arrow-left me-2"></i>Back</button>
+                                    <button type="submit" class="btn btn-sell text-white"><i class="fas fa-check me-2"></i>Post Ad Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sell.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+.product-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main-image {
+    height: 400px;
+    object-fit: contain;
+    background: #f8f9fa;
+    cursor: zoom-in;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+    border-color: #f46b45;
+}
+
+.price-tag {
+    color: #f46b45;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.detail-label {
+    color: #666;
+    min-width: 120px;
+    display: inline-block;
+}
+
+.seller-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.btn-chat {
+    background: #f46b45;
+    color: white;
+    border-radius: 50px;
+}
+
+.btn-call {
+    background: #4CAF50;
+    color: white;
+    border-radius: 50px;
+}
+
+.similar-product {
+    transition: transform 0.3s;
+}
+
+.similar-product:hover {
+    transform: translateY(-5px);
+}
+
+.zoom-modal .modal-dialog {
+    max-width: 90%;
+    height: 90vh;
+}
+
+.zoom-modal .modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.zoomed-image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
