@@ -1,0 +1,23 @@
+ .category-icon {
+     font-size: 2rem;
+     margin-bottom: 10px;
+ }
+
+ .card-img-top {
+     height: 200px;
+     object-fit: cover;
+ }
+
+ .navbar-brand {
+     font-weight: bold;
+     color: #e67e22;
+ }
+
+ .location-selector {
+     background-color: #f8f9fa;
+     border-radius: 5px;
+     padding: 20px;
+ }
+ #card_row{
+    cursor: pointer;
+ }

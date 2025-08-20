@@ -1,0 +1,142 @@
+.sell-form-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sell-header {
+    background: linear-gradient(135deg, #f46b45, #eea849);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+}
+
+.image-upload-box {
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.image-upload-box:hover {
+    border-color: #f46b45;
+    background-color: #fef6f4;
+}
+
+.upload-icon {
+    font-size: 3rem;
+    color: #f46b45;
+    margin-bottom: 15px;
+}
+
+.price-input .input-group-text {
+    background-color: white;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #f46b45;
+    box-shadow: 0 0 0 0.25rem rgba(244, 107, 69, 0.25);
+}
+
+.btn-sell {
+    background: linear-gradient(135deg, #f46b45, #eea849);
+    border: none;
+    padding: 10px 30px;
+    font-weight: 600;
+}
+
+.btn-sell:hover {
+    background: linear-gradient(135deg, #e05a3a, #dd9842);
+}
+
+.preview-image {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.remove-image {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: red;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+    flex-grow: 1;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    color: #666;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: bold;
+}
+
+.step.active .step-number {
+    background-color: #f46b45;
+    color: white;
+}
+
+.step.completed .step-number {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.step-title {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.step.active .step-title {
+    color: #f46b45;
+    font-weight: bold;
+}
+
+.step.completed .step-title {
+    color: #4CAF50;
+}
+
+.step-connector {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    right: -50%;
+    height: 2px;
+    background-color: #ddd;
+    z-index: -1;
+}
+
+.step.completed .step-connector {
+    background-color: #4CAF50;
+}
